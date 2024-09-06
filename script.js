@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const validEmail = 'adi@dev.co';
     const validPassword = 'adibhai';
 
-    let moveDirection = 'right';
+    let isMoving = true; // Flag to control button movement
 
     function toggleButtonPosition() {
-        if (moveDirection === 'right') {
+        if (isMoving) {
             loginBtn.classList.add('move-right');
-            moveDirection = 'left';
-        } else {
-            loginBtn.classList.add('move-left');
-            moveDirection = 'right';
+            setTimeout(() => {
+                loginBtn.classList.remove('move-right');
+                loginBtn.classList.add('move-left');
+                setTimeout(() => {
+                    loginBtn.classList.remove('move-left');
+                }, 500);
+            }, 500);
         }
-        setTimeout(() => {
-            loginBtn.classList.remove('move-right', 'move-left');
-        }, 500);
     }
 
     function validateCredentials() {
@@ -27,9 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginBtn.addEventListener('click', () => {
         if (validateCredentials()) {
+            // Stop the button movement and center it
             loginBtn.style.position = 'relative';
             loginBtn.style.left = '0';
             loginBtn.style.transition = 'all 0.5s ease';
+            isMoving = false; // Stop the movement
         } else {
             toggleButtonPosition();
         }
