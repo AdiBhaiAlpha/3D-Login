@@ -1,15 +1,27 @@
+/* Common styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+}
+
+footer {
+    background-color: #333;
 }
 
 .login-container {
-    text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 input {
@@ -34,5 +46,32 @@ button.move-right {
 
 button.move-left {
     position: absolute;
+    left: -100px;
+}
+
+/* Welcome page styles */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Adjust for header/footer height */
+}
+
+.welcome-text {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    perspective: 1000px;
+}
+
+.welcome-text h2 {
+    display: inline-block;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s;
+}
+
+.welcome-text h2:hover {
+    transform: rotateX(10deg) rotateY(10deg);
+}
     left: -100px;
 }
