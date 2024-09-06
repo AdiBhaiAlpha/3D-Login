@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const validEmail = 'adi@dev.co';
     const validPassword = 'adibhai';
 
-    let isMoving = true; // Flag to control button movement
+    let isMoving = true;
 
     function toggleButtonPosition() {
         if (isMoving) {
@@ -27,11 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginBtn.addEventListener('click', () => {
         if (validateCredentials()) {
-            // Stop the button movement and center it
             loginBtn.style.position = 'relative';
             loginBtn.style.left = '0';
             loginBtn.style.transition = 'all 0.5s ease';
-            isMoving = false; // Stop the movement
+            isMoving = false;
+            setTimeout(() => {
+                window.location.href = 'welcome.html';
+            }, 500); // Delay to ensure position reset
         } else {
             toggleButtonPosition();
         }
