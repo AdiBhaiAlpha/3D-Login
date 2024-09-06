@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
 
-    const validEmail = 'test@example.com';
-    const validPassword = 'password123';
+    const validEmail = 'adi@dev.co';
+    const validPassword = 'adibhai';
 
     let moveDirection = 'right';
 
